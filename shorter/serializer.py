@@ -10,6 +10,6 @@ class ShorterSerializer(serializers.ModelSerializer):
         model = Shorter
         fields = ('original_url', 'short_url')
 
-    def get_short_url(self, obj):
+    def get_short_url(self, obj: Shorter):
         request = self.context.get('request')
         return obj.get_short_url(request)

@@ -1,5 +1,9 @@
 from django.db import models
 import hashlib
+
+from django.http import HttpRequest
+
+
 #md5 for hash
 
 
@@ -15,5 +19,5 @@ class Shorter(models.Model):
         self.shortened_url = hashlib.md5(self.original_url.encode()).hexdigest()
         super().save(*args, **kwargs)
 
-    def get_short_url(self, request):
+    def get_short_url(self, request: HttpRequest):
         return request.build_absolute_uri(f"/shorter/{self.shortened_url}/")
