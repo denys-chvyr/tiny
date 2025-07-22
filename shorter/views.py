@@ -1,7 +1,4 @@
-from django.contrib.auth.views import RedirectURLMixin
-from django.shortcuts import render, redirect
-from rest_framework import mixins, generics, status
-from django.http import HttpResponseBadRequest
+from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from shorter.serializer import ShorterSerializer
